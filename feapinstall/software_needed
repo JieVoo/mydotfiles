@@ -1,0 +1,3 @@
+#!/bin/bash
+
+apt-get install gfortran libblas-dev liblapack-dev valgrind cmake xorg-dev git python-numpy python-scipy python-matplotlib paraview emacs vim texlive-latex-extra texlive-math-extra

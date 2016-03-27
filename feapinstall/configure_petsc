@@ -1,0 +1,2 @@
+./configure --with-debugging=0 --download-mpich --download-fblaslapack --download-scalapack --download-superlu_dist --download-mumps --download-hypre --download-metis --download-parmetis --download-ml --download-suitesparse
+

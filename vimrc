@@ -123,5 +123,4 @@ nnoremap <leader>u :gundotoggle<cr>
 " open ctrlp in new tab
 let g:ctrlp_prompt_mappings = {
     \ 'acceptselection("e")': ['<c-t>'],
-    \ 'acceptselection("t")': ['<cr>', '<2-leftmouse>'],
     \ }

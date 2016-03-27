@@ -1,0 +1,8 @@
+export PYTHONPATH=/home/cxc/software/feap84/misc:$PYTHONPATH
+export PYTHONPATH=/home/cxc/software/feap84/prepost_tools:$PYTHONPATH
+export FEAPHOME8_4=/home/cxc/software/feap84
+export PETSC_DIR=/home/cxc/software/petsc-3.5.4
+export PETSC_ARCH=arch-linux2-c-opt
+
+alias feap84=/home/cxc/software/feap84/main/feap
+alias parfeap84=/home/cxc/software/feap84/parfeap/feap

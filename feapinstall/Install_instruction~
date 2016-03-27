@@ -1,0 +1,13 @@
+1 software_needed
+2 petsc_3.5.4
+3 feap
+4 parfeap
+
+first  emacs ~/.bash_aliases   change the path
+second source ~/.bashrc
+       echo $PYTHONPATH ...   check 
+third  install Petsc(see configure_petsc)
+forth  copy Builder.py in feap/misc to feap folder and change the name as Build.py and the dir in it
+last   install  python Build.py (-m=o/g)
+       Creat two folders named 'ADbg'&'AOpt' before
+
