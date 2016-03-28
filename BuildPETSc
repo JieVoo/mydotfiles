@@ -1,0 +1,46 @@
+#!/bin/bash
+
+function prtPaths {
+    echo "PETSC_DIR=  $(echo $PETSC_DIR)"
+    echo "PETSC_ARCH= $(echo $PETSC_ARCH)"
+}
+
+export PETSC_DIR=/Users/wujie/SourceCode/petsc-3.5.4/
+
+cd $PETSC_DIR
+
+if [[ $1 == 'opt' ]] ; then
+    # Building from the beggining - Optimized
+    export PETSC_ARCH=gnu-opt
+    prtPaths
+    python ./configure \
+    --with-cc=gcc\
+    --with-fc=gfortran \
+    --with-cxx=g++ \
+    --with-debugging=0 \
+    --with-shared-libraries=0 \
+    --download-fblaslapack \
+    --download-mpich \
+    --download-cmake \
+    --download-parmetis \
+    --download-metis \
+    --download-suitesparse
+elif [[ $1 == 'dbg' ]] ; then
+    # Building from the beggining - With Debugging
+    export PETSC_ARCH=gnu-dbg
+    prtPaths
+    python ./configure \
+    --with-cc=/usr/bin/gcc \
+    --with-fc=/usr/local/bin/gfortran \
+    --with-cxx=/usr/bin/g++ \
+    --with-debugging=1 \
+    --with-shared-libraries=0 \
+    --download-fblaslapack \
+    --download-mpich \
+    --download-parmetis \
+    --download-metis \
+    --download-suitesparse
+fi
+
+make all
+make test

@@ -21,8 +21,9 @@ Plugin 'honza/vim-snippets'
 Plugin 'tpope/vim-fugitive'
 Plugin 'sjl/gundo.vim'
 Plugin 'kien/ctrlp.vim'
-Bundle 'scrooloose/nerdtree'
-Bundle 'scrooloose/syntastic'
+Plugin 'xolox/vim-notes'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
 ####################
 
 " all of your plugins must be added before the following line
