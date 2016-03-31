@@ -115,7 +115,7 @@ inoremap jk <esc>
 " leader shortcuts
 let mapleader=","       " leader is comma
 " toggle gundo
-nnoremap <leader>u :gundotoggle<cr>
+nnoremap <leader>u :GundoToggle<CR>
 " switch between splits
 " nnoremap <c-j> <c-w><c-j>
 " nnoremap <c-k> <c-w><c-k>
