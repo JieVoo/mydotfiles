@@ -8,7 +8,8 @@ call vundle#begin()
 
 " let vundle manage vundle, required
 Plugin 'gmarik/Vundle.vim' " changed from 'gmarik/vundle' which is differ from Vundle.vim
-" plugin for verson control
+Plugin 'Valloric/YouCompleteMe'
+" plugin for version control
 Plugin 'mhinz/vim-signify'
 " plugin for latex
 Plugin 'latex-box-team/latex-box'
@@ -30,13 +31,12 @@ Plugin 'scrooloose/syntastic'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-" color scheme
-syntax enable
+syntax enable           " enable syntax processing
 set background=light
 colorscheme solarized
 
-" set line number
-set number
+set number              " show line numbers
+filetype indent on      " load filetype-specific indent files
 " working directory is always same as the file being edited
 set autochdir
 " check spelling
@@ -55,18 +55,31 @@ set hlsearch            " highlight matches
 set foldenable          " enable folding
 set foldlevelstart=10   " open most folds by default
 set foldnestmax=10      " 10 nested fold max
+nnoremap <space> za     " space open/closes folds
 set foldmethod=indent   " fold based on indent level
 " move
 " move to beginning/end of line
-nnoremap b ^
-nnoremap e $
-
+nnoremap B ^
+nnoremap E $
 " $/^ doesn't do anything
 nnoremap $ <nop>
 nnoremap ^ <nop>
+" move vertically by visual line
+nnoremap j gj
+nnoremap k gk
+
 " highlight last inserted text
-nnoremap gv `[v`]
+nnoremap gV `[v`]
 """"""""""""""""""""""""""""""""""""""""
+" leader shortcuts
+let mapleader=","       " leader is comma
+" jk is escape
+inoremap jk <esc>
+" CtrlP settings
+let g:ctrlp_match_window = 'bottom,order:ttb'
+let g:ctrlp_switch_buffer = 0
+let g:ctrlp_working_path_mode = 0
+" let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
 
 nnoremap th  :tabfirst<cr>
 nnoremap tj  :tabprev<cr>
@@ -82,7 +95,7 @@ set clipboard=unnamed
 " tell it to use an undo file
 set undofile
 " set a directory to store the undo history
-set undodir=/home/yourname/.vimundo/
+set undodir=/Users/wujie/.vimundo/
 
 " display status line always
 set laststatus=2
@@ -95,25 +108,20 @@ set statusline+=\ [%{&ff}/%y]            " filetype
 set statusline+=\ [%{getcwd()}]          " current dir
 set statusline+=%=%-14.(%l,%c%v%)\ %p%%  " right aligned file nav info
 
-
-if isdirectory(expand("~/.vim/bundle/vim-fugitive/"))
-    nnoremap <silent> <leader>gs :gstatus<cr>
-    nnoremap <silent> <leader>gd :gdiff<cr>
-    nnoremap <silent> <leader>gc :gcommit<cr>
-    nnoremap <silent> <leader>gb :gblame<cr>
-    nnoremap <silent> <leader>gl :glog<cr>
-    nnoremap <silent> <leader>gp :git push<cr>
-    nnoremap <silent> <leader>gr :gread<cr>
-    nnoremap <silent> <leader>gw :gwrite<cr>
-    nnoremap <silent> <leader>ge :gedit<cr>
-    " mnemonic _i_nteractive
-    nnoremap <silent> <leader>gi :git add -p %<cr>
-    nnoremap <silent> <leader>gg :signifytoggle<cr>
-endif
-" jk is escape
-inoremap jk <esc>
-" leader shortcuts
-let mapleader=","       " leader is comma
+" if isdirectory(expand("~/.vim/bundle/vim-fugitive/"))
+nnoremap <leader>gs :Gstatus<cr>
+nnoremap <leader>gd :Gdiff<cr>
+nnoremap <leader>gc :Gcommit<cr>
+nnoremap <leader>gb :Gblame<cr>
+nnoremap <leader>gl :Glog<cr>
+nnoremap <leader>gp :Git push<cr>
+nnoremap <leader>gr :Gread<cr>
+nnoremap <leader>gw :Gwrite<cr>
+nnoremap <leader>ge :Gedit<cr>
+" mnemonic _i_nteractive
+nnoremap <leader>gi :Git add -p %<cr>
+nnoremap <leader>gg :SignifyToggle<cr>
+" endif
 " toggle gundo
 nnoremap <leader>u :GundoToggle<CR>
 " switch between splits
@@ -125,3 +133,7 @@ nnoremap <leader>u :GundoToggle<CR>
 let g:ctrlp_prompt_mappings = {
     \ 'acceptselection("e")': ['<c-t>'],
     \ }
+" complete
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
