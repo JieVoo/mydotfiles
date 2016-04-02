@@ -22,7 +22,8 @@ Plugin 'honza/vim-snippets'
 Plugin 'tpope/vim-fugitive'
 Plugin 'sjl/gundo.vim'
 Plugin 'kien/ctrlp.vim'
-Plugin 'xolox/vim-notes'
+Bundle 'xolox/vim-misc'
+Bundle 'xolox/vim-notes'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 ####################
@@ -31,21 +32,20 @@ Plugin 'scrooloose/syntastic'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
+filetype plugin on    " required
 syntax enable           " enable syntax processing
 set background=light
 colorscheme solarized
 
 set number              " show line numbers
-filetype indent on      " load filetype-specific indent files
 " working directory is always same as the file being edited
 set autochdir
 " check spelling
 set spell
 " for the font sizes
-set guifont=monaco:h12
+set guifont=Monaco:h12
 """"""""""""""""""""""""""""""""""""""""
 set cursorline          " highlight current line
-filetype indent on      " load filetype-specific indent files
 set wildmenu            " visual autocomplete for command menu
 set lazyredraw          " redraw only when we need to.
 set showmatch           " highlight matching [{()}]
