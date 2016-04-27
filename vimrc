@@ -26,7 +26,7 @@ Bundle 'xolox/vim-misc'
 Bundle 'xolox/vim-notes'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
-####################
+" ####################
 
 " all of your plugins must be added before the following line
 call vundle#end()            " required

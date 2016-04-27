@@ -8,3 +8,5 @@ alias feap83=/Users/wujie/SourceCode/ShearBands/main/feap
 alias parfeap83=/Users/wujie/SourceCode/ShearBands/parfeap/feap
 alias pvpython=/Applications/paraview.app/Contents/bin/pvpython
 alias vim=/Applications/MacVim.app/Contents/MacOS/vim
+alias gmsh=/Applications/Gmsh.app/Contents/MacOS/gmsh
+alias paraview=/Applications/paraview.app/Contents/MacOS/paraview
