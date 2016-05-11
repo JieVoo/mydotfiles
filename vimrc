@@ -80,6 +80,7 @@ let g:ctrlp_match_window = 'bottom,order:ttb'
 let g:ctrlp_switch_buffer = 0
 let g:ctrlp_working_path_mode = 0
 " let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
+let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 
 nnoremap th  :tabfirst<cr>
 nnoremap tj  :tabprev<cr>
