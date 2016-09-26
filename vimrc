@@ -1,4 +1,5 @@
 " for the plugin manager vundle
+set fileencodings=utf-8,gb2312,gb18030,gbk,ucs-bom,cp936,latin1
 set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -30,18 +31,28 @@ Plugin 'scrooloose/syntastic'
 
 " all of your plugins must be added before the following line
 call vundle#end()            " required
+" Automatic indent
 filetype plugin indent on    " required
+" show existing tab with 4 spaces width
+set tabstop=4
+" when indenting with '>', use 4 spaces width
+set shiftwidth=4
+" On pressing tab, insert 4 spaces
+set expandtab
 
 filetype plugin on    " required
 syntax enable           " enable syntax processing
+let g:solarized_termcolors=256
 set background=light
 colorscheme solarized
 
+set tags+=/Users/wujie/SourceCode/tags
+set path+=/Users/wujie/SourceCode/ShearBands/**
 set number              " show line numbers
 " working directory is always same as the file being edited
 set autochdir
 " check spelling
-set spell
+"set spell
 " for the font sizes
 set guifont=Monaco:h12
 """"""""""""""""""""""""""""""""""""""""
@@ -56,7 +67,8 @@ set foldenable          " enable folding
 set foldlevelstart=10   " open most folds by default
 set foldnestmax=10      " 10 nested fold max
 nnoremap <space> za     " space open/closes folds
-set foldmethod=indent   " fold based on indent level
+set foldmethod=marker   " fold based on marker 
+set foldcolumn = 4
 " move
 " move to beginning/end of line
 nnoremap B ^
@@ -67,6 +79,9 @@ nnoremap ^ <nop>
 " move vertically by visual line
 nnoremap j gj
 nnoremap k gk
+
+" ctags
+map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 
 " highlight last inserted text
 nnoremap gV `[v`]

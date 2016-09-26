@@ -2,8 +2,8 @@
 export PYTHONPATH=${PYTHONPATH}:/Users/wujie/SourceCode/ShearBands/prepost_tools/
 # Setting feap's path
 export FEAPHOME8_3="/Users/wujie/SourceCode/ShearBands"
-# Set doxygen's path 
-export PATH=${PATH}:/Applications/Doxygen.app/Contents/Resources/
+# Setting moab's path
+export moab="/Users/wujie/SourceCode/moab"
 
 # make nicknames for some commands
 alias feap83=/Users/wujie/SourceCode/ShearBands/main/feap
@@ -12,3 +12,5 @@ alias pvpython=/Applications/paraview.app/Contents/bin/pvpython
 alias vim=/Applications/MacVim.app/Contents/MacOS/vim
 alias gmsh=/Applications/Gmsh.app/Contents/MacOS/gmsh
 alias paraview=/Applications/paraview.app/Contents/MacOS/paraview
+alias sb="/Users/wujie/SourceCode/ShearBands/"
+alias nm="/Users/wujie/SourceCode/nmap/"
