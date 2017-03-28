@@ -8,7 +8,7 @@ call vundle#begin()
 "call vundle#begin('~/some/path/here')
 
 " let vundle manage vundle, required
-Plugin 'gmarik/Vundle.vim' " changed from 'gmarik/vundle' which is differ from Vundle.vim
+Plugin 'VundleVim/Vundle.vim' " changed from 'gmarik/vundle' which is differ from Vundle.vim
 Plugin 'Valloric/YouCompleteMe'
 " plugin for version control
 Plugin 'mhinz/vim-signify'
@@ -43,7 +43,7 @@ set expandtab
 filetype plugin on    " required
 syntax enable           " enable syntax processing
 let g:solarized_termcolors=256
-set background=light
+set background=dark
 colorscheme solarized
 
 set tags+=/Users/wujie/SourceCode/tags
@@ -68,7 +68,7 @@ set foldlevelstart=10   " open most folds by default
 set foldnestmax=10      " 10 nested fold max
 nnoremap <space> za     " space open/closes folds
 set foldmethod=marker   " fold based on marker 
-set foldcolumn = 4
+set foldcolumn=4
 " move
 " move to beginning/end of line
 nnoremap B ^
@@ -98,8 +98,8 @@ let g:ctrlp_working_path_mode = 0
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 
 nnoremap th  :tabfirst<cr>
-nnoremap tj  :tabprev<cr>
-nnoremap tk  :tabnext<cr>
+nnoremap J   :tabprev<cr>
+nnoremap K   :tabnext<cr>
 nnoremap tl  :tablast<cr>
 nnoremap td  :tabclose<cr>
 nnoremap tn :tabnew<cr>
